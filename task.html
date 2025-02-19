@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <title>SESI 6</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a onclick="reload()" id="home">HOME</a>
+            <select id="themeSelector">
+                <option value="light">LIGHTMODE</option>
+                <option value="dark">DARKMODE</option>
+            </select>
+        </nav>
+        <h1>TES SESI 6</h1>
+        <p class="info" id="info"></p>
+    </div>
+    <script>
+        let body = document.body;
+        let info = document.getElementById("info");
+        let themeSelector = document.getElementById("themeSelector");
+
+        function darkmode(theme) {
+            if (theme === "dark") {
+                body.classList.add("dark");
+            } else {
+                body.classList.remove("dark");
+            }
+        }
+
+        function reload(){
+            location.reload();
+        }
+
+        themeSelector.addEventListener("change", function() {
+            darkmode(this.value);
+        });
+
+    </script>
+</body>
+</html>
